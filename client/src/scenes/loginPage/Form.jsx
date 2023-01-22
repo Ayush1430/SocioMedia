@@ -71,7 +71,7 @@ const Form = () => {
         method: "POST",
         body: formData,
       }
-    ).then(response=>response.text())
+    ).then(savedUserResponse=>savedUserResponse.text())
     .then(text=>console.log(text));
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
