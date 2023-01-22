@@ -60,8 +60,8 @@ const Form = () => {
     // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
-      console.log(value,values[value]);
       formData.append(value, values[value]);
+      console.log(formData);
     }
 
     formData.append("picturePath", values.picture.name);
