@@ -17,24 +17,25 @@ export const register = async (req, res) => {
       occupation,
     } = req.body;
     
-    console.log(firstName,
-      lastName,
-      email,
-      password,
-      picturePath,
-      friends,
-      location,
-      occupation);
+    // console.log(firstName,
+    //   lastName,
+    //   email,
+    //   password,
+    //   picturePath,
+    //   friends,
+    //   location,
+    //   occupation);
 
-    const salt = await bcrypt.genSalt();
-    const passwordHash = await bcrypt.hash(password, salt);
-    console.log(passwordHash);
+    // const salt = await bcrypt.genSalt();
+    // const passwordHash = await bcrypt.hash(password, salt);
+    // console.log(passwordHash);
 
     const newUser = new User({
       firstName,
       lastName,
       email,
-      password: passwordHash,
+      //password: passwordHash,
+      password,
       picturePath,
       friends,
       location,
