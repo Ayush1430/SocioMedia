@@ -16,7 +16,7 @@ export const register = async (req, res) => {
       location,
       occupation,
     } = req.body;
-    
+    console.log(firstName);
     // console.log(firstName,
     //   lastName,
     //   email,
