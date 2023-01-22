@@ -60,16 +60,17 @@ const Form = () => {
     // this allows us to send form info with image
     const formData = new FormData();
     for (let value in values) {
+      console.log(value,values[value]);
       formData.append(value, values[value]);
     }
-    let pathi="Screenshot_20221210_042543.png";
-    formData.append("picturePath", pathi);
+
+    formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
       "https://socio-media.vercel.app/auth/register",
       {
         method: "POST",
-        body: formData,
+        body: JSON.stringify(formData),
       }
     );
     const savedUser = await savedUserResponse.json();
