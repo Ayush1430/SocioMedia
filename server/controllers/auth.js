@@ -15,7 +15,7 @@ export const register = async (req, res) => {
       friends,
       location,
       occupation,
-    } = req.body;
+    } ="" ;
     console.log(firstName);
     // console.log(firstName,
     //   lastName,
@@ -31,15 +31,15 @@ export const register = async (req, res) => {
     // console.log(passwordHash);
 
     const newUser = new User({
-      firstName,
-      lastName,
-      email,
+      firstName:req.body.firstName,
+      lastName:req.body.lastName,
+      email:req.body.email,
       //password: passwordHash,
-      password,
-      picturePath,
+      password:req.body.password,
+      picturePath:req.body.picturePath,
       friends,
-      location,
-      occupation,
+      location:req.body.location,
+      occupation:req.body.occupation,
       viewedProfile: Math.floor(Math.random() * 10000),
       impressions: Math.floor(Math.random() * 10000),
     });
