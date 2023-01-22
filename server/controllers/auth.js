@@ -5,7 +5,7 @@ import User from "../models/User.js";
 /* REGISTER USER */
 export const register = async (req, res) => {
   try {
-    console.log(req.body);
+    
     const {
       firstName,
       lastName,
@@ -16,6 +16,15 @@ export const register = async (req, res) => {
       location,
       occupation,
     } = req.body;
+    
+    console.log(firstName,
+      lastName,
+      email,
+      password,
+      picturePath,
+      friends,
+      location,
+      occupation);
 
     const salt = await bcrypt.genSalt();
     const passwordHash = await bcrypt.hash(password, salt);
@@ -32,6 +41,8 @@ export const register = async (req, res) => {
       viewedProfile: Math.floor(Math.random() * 10000),
       impressions: Math.floor(Math.random() * 10000),
     });
+    console.log("next");
+    console.log(newUser);
     const savedUser = await newUser.save();
     res.status(201).json(savedUser);
   } catch (err) {
