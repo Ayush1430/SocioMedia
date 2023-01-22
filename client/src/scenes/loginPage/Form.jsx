@@ -62,7 +62,7 @@ const Form = () => {
     for (let value in values) {
       formData.append(value, values[value]);
     }
-    formData.append("picturePath", values.picture.name);
+    formData.append("picturePath", "kuchbhi");
 
     const savedUserResponse = await fetch(
       "https://socio-media.vercel.app/auth/register",
