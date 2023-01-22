@@ -70,7 +70,7 @@ const Form = () => {
       "https://socio-media.vercel.app/auth/register",
       {
         method: "POST",
-        body: JSON.stringify(formData),
+        body: formData,
       }
     );
     const savedUser = await savedUserResponse.json();
