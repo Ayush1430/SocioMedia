@@ -69,7 +69,7 @@ const Form = () => {
       "https://socio-media.vercel.app/auth/register",
       {
         method: "POST",
-        body: formData,
+        body: formData
       }
     ).then(savedUserResponse=>savedUserResponse.text())
     .then(text=>console.log(text));
