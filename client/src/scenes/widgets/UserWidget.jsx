@@ -23,7 +23,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
   const getUser = async () => {
     const response = await fetch(
-      `https://localhost:3007/users/${userId}`,
+      `https://socio-media.vercel.app/users/${userId}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
