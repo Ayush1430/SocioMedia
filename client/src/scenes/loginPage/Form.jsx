@@ -61,7 +61,6 @@ const Form = () => {
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
-      console.log(formData);
     }
 
     formData.append("picturePath", values.picture.name);
