@@ -58,6 +58,7 @@ export const register = async (req, res) => {
 export const login = async (req, res) => {
   const { email, password } = req.body;
   try {
+    console.log(password);
     const user = await User.findOne({ email: email }).lean().exec();
     if (!user) return res.status(400).json({ success:false, message: "User does not exist. " });
 
