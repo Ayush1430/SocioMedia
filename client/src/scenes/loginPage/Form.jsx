@@ -66,13 +66,12 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://socio-media.vercel.app/auth/api/register",
+      "https://sociomedia-app.onrender.com/auth/api/register",
       {
         method: "POST",
         body: formData
       }
-    ).then(savedUserResponse=>savedUserResponse.text())
-    .then(text=>console.log(text));
+    );
     const savedUser = await savedUserResponse.json();
     onSubmitProps.resetForm();
 
@@ -82,7 +81,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("https://socio-media.vercel.app/auth/login", {
+    const loggedInResponse = await fetch("https://sociomedia-app.onrender.com/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(values),

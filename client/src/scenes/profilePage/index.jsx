@@ -16,7 +16,7 @@ const ProfilePage = () => {
 
   const getUser = async () => {
     const response = await fetch(
-      `https://socio-media.vercel.app/users/${userId}`,
+      `https://sociomedia-app.onrender.com/users/${userId}`,
       {
         method: "GET",
         headers: { Authorization: `Bearer ${token}` },
