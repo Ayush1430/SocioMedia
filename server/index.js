@@ -55,17 +55,18 @@ app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT ;
-mongoose.set('strictQuery',false)
-mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
-  .then(() => {
-    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    /* ADD DATA ONE TIME */
-    // User.insertMany(users);
-    // Post.insertMany(posts);
-  })
-  .catch((error) => console.log(`${error} did not connect`));
+app.listen(PORT, async () => {
+  try {
+      await connectDB();
+      console.log(`Server running port ${PORT}`);
+      console.log("database connected")
+
+      // this data insert one time please do not uncomment again
+      // User.insertMany(users);
+      // Post.insertMany(posts);
+  } catch (error) {
+      console.log(error.message);
+  }
+});
+export default app;
