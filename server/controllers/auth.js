@@ -6,16 +6,16 @@ import User from "../models/User.js";
 export const register = async (req, res) => {
   try {
     
-    //const {
-    //   firstName,
-    //   lastName,
-    //   email,
-    //   password,
-    //   picturePath,
-    //   friends,
-    //   location,
-    //   occupation,
-    // } ="" ;
+    const {
+      firstName,
+      lastName,
+      email,
+      password,
+      picturePath,
+      friends,
+      location,
+      occupation,
+    } =req.body ;
     //console.log(firstName);
     // console.log(firstName,
     //   lastName,
