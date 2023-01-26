@@ -84,7 +84,7 @@ const Form = () => {
     const loggedInResponse = await fetch("https://sociomedia-app.onrender.com/auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(values),
+      body: JSON.stringify(values)
     });
     const loggedIn = await loggedInResponse.json();
     onSubmitProps.resetForm();
@@ -130,7 +130,7 @@ const Form = () => {
             }}
           >
             {isRegister && (
-              <React.Fragment>
+              <>
                 <TextField
                   label="First Name"
                   onBlur={handleBlur}
@@ -208,7 +208,7 @@ const Form = () => {
                     )}
                   </Dropzone>
                 </Box>
-              </React.Fragment>
+              </>
             )}
 
             <TextField
