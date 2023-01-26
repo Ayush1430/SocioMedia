@@ -44,7 +44,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 /* ROUTES WITH FILES */
-app.post("/auth/register", register);
+app.post("/auth/api/register", upload.single("picture"),  register);
 app.post("/posts", verifyToken, upload.single("picture"), createPost);
 
 /* ROUTES */
@@ -55,6 +55,7 @@ app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT ;
+mongoose.set('strictQuery',false)
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,

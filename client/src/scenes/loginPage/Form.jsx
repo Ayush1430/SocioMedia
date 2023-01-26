@@ -66,7 +66,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "https://socio-media.vercel.app/auth/register",
+      "https://socio-media.vercel.app/auth/api/register",
       {
         method: "POST",
         body: formData
